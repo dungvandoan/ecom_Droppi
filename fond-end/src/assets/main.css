@@ -1,0 +1,73 @@
+@import './base.css';
+
+img {
+	max-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+}
+
+a {
+	text-decoration: none;
+	color: var(--cl-text-black);
+	transition: 0.4s;
+}
+
+ul,
+li,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+svg {
+	width: 25px;
+	height: 25px;
+	transition: 0.4s ease;
+}
+
+@media (max-width: 575.98px) {
+	.container {
+		max-width: 100%;
+		margin: 0 auto;
+	}
+}
+
+/* Small devices (màn hình nhỏ, ví dụ: điện thoại dọc) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.container {
+		max-width: 540px;
+		margin: 0 auto;
+	}
+}
+
+/* Medium devices (tablet và một số màn hình nhỏ hơn) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.container {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+}
+
+/* Large devices (laptop và màn hình lớn hơn) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.container {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+}
+
+/* Extra large devices (màn hình rất lớn) */
+@media (min-width: 1200px) and (max-width: 1399.98px){
+	.container {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 1400px) {
+	.container {
+		max-width: 1320px;
+		margin: 0 auto;
+	}
+}

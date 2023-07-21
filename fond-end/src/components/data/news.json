@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Tảo Spirulina – “Tấm lá chắn” bảo vệ sức khỏe gia đình",
+	"thumbnail" : "/img-blog/tảo-463x348.jpg",
+    "descript": "Mùa dịch không chỉ khiến sức khỏe của bạn có nguy cơ lây nhiễm bệnh cao mà còn mang đến sự bất an mỗi khi ra đường. Đừng lo lắng, bạn có thể tìm cách tăng cường sức đề kháng và sử dụng nó như “lá chắn” giúp cơ thể phòng chống các loại bệnh tật.",
+    "category": "cẩm nang sức khoẻ",
+	"content": "",
+	"comment": 0,
+	"time" : ""
+  },
+  {
+    "id": 2,
+    "title": "NHÂN SÂM HÒA TAN CND GINSENG Red",
+  	"thumbnail" : "/img-blog/test2.jpg",
+    "descript": "Từ lâu, uống trà, cà phê đã trở thành nét văn hóa đặc trưng của người Việt Nam chúng ta, rất dễ dàng để bắt gặp hình ảnh tách cà phê, tách trà trong những cuộc thảo luận công việc, để tán gẫu, trò chuyện, hay đơn giản là để thư giãn sau những giờ làm việc căng thẳng.",
+    "category": "cẩm nang sức khoẻ",
+  	"content": "",
+  	"comment": 0,
+	"time" :  ""
+  },
+  {
+    "id": 3,
+    "title": "Elly’s Secret – Khỏe đẹp bền vững vượt thời gian",
+  	"thumbnail" : "/img-blog/ellys-secret-15-463x348.jpg",
+    "descript": "Tiên phong phát triển các sản phẩm dựa trên tinh hoa của khoa học và các loại “tiên dược” quý từ Hàn Quốc, Elly’s Secret đã và đang từng bước khẳng định vị thế đi đầu của một thương hiệu dược mỹ phẩm chăm sóc sức khỏe và sắc đẹp toàn diện cho người tiêu dùng Việt Nam.",
+    "category": "bí quyết làm đẹp",
+  	"content": "",
+  	"comment": 0,
+	"time" : ""
+  },
+  {
+    "id": 4,
+    "title": "PHỤ NỮ HIỆN ĐẠI – KHÔNG NGẠI TRANG ĐIỂM",
+  	"thumbnail" : "/img-blog/picture1_optimized-2-463x348.png",
+    "descript": "Nếu như cách đây nhiều thập kỷ, người phụ nữ thường mang sẵn trên mình sự sắp đặt của những hy sinh, tảo tần, của bếp núc, hậu phương thì ngày nay, vị trí của người phụ nữ đã trở nên quan trọng hơn. Thậm chí, không thể phủ nhận những giá trị đáng kể mà người phụ nữ đã và đang đóng góp cho sự phát triển toàn diện của xã hội hiện đại. Với sự chuyển biến tích cực này, quan điểm làm đẹp của chị em phụ nữ cũng dần thay đổi và gợi mở hơn. Nhu cầu chăm sóc ngoại hình chỉn chu để tự tin trong giao tiếp ngày càng cao. Điều này kéo theo sự phát triển mạnh mẽ của ngành thời trang, chăm sóc da và đặc biệt là trang điểm.",
+    "category": "bí quyết làm đẹp",
+  	"content": "",
+  	"comment": 0,
+	"time" : ""
+  }
+]
