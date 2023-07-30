@@ -7,9 +7,9 @@
 	import Tumblur from '../../assets/icon-svg/social/tumblur.vue'
 </script>
 <template>
-	<div class="proItemSocial">
-		<span>SHARE</span>
-		<ul class="icon-social">
+	<div class="proItemSocial d-flex align-items-center flex-wrap">
+		<span class="uppercase fw-600 me-2">chia sẻ</span>
+		<ul class="icon-social d-flex justify-content-center align-items-center">
 			<li class="social-item">
 				<a href="#" class="social-link">
 					<Facebook />
@@ -47,22 +47,11 @@
 <script>
 </script>
 
-<style scoped>
-	.proItemSocial{
-		display: flex;
-		align-items: center;
-	}
+<style>
 	.proItemSocial span{
-		margin-right: 30px;
 		font-size: 16px;
 		line-height: 26px;
-		font-weight: 600;
-		color: var(--cl-text-secondary);
-	}
-	.icon-social{
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		color: var(--gray-dark);
 	}
 	.icon-social .social-item{
 		width: 30px;

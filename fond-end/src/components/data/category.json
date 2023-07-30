@@ -1,0 +1,66 @@
+[{
+		"name": "Bách hóa tổng hợp",
+		"link": "",
+		"subCategories": [{
+				"name": "Khẩu trang",
+				"link": ""
+			},
+			{
+				"name": "Vệ sinh nhà cửa",
+				"link": ""
+			}
+		]
+	},
+	{
+		"name": "Bảo hiểm",
+		"link": "",
+		"subCategories": []
+	},
+	{
+		"name": "Chăm Sóc Cá Nhân",
+		"link": "",
+		"subCategories": []
+	},
+	{
+		"name": "Đặc sản địa phương",
+		"link": "",
+		"subCategories": []
+	},
+	{
+		"name": "Dịch vụ",
+		"link": "",
+		"subCategories": []
+	},
+	{
+		"name": "DROPPII LIVING",
+		"link": "",
+		"subCategories": []
+	},
+	{
+		"name": "Mẹ và Bé",
+		"link": "",
+		"subCategories": [{
+				"name": "Chăm sóc cơ thể cho bé",
+				"link": ""
+			},
+			{
+				"name": "Đồ dùng ăn dặm",
+				"link": ""
+			},
+			{
+				"name": "Đồ dùng cho trẻ sơ sinh",
+				"link": ""
+			},
+			{
+				"name": "Học tập",
+				"link": ""
+			}, {
+				"name": "Sữa Mẹ & Bé",
+				"link": ""
+			}, {
+				"name": "Thực phẩm cho bé",
+				"link": ""
+			}
+		]
+	}
+]

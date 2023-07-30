@@ -1,6 +1,6 @@
 <script setup>
 	import BlogList from '../components/blog/BlogNewList.vue'
-	import Aside from '../components/pages/Category.vue'
+	import Aside from '../components/category/CatItemList.vue'
 </script>
 <template>
 	<main>

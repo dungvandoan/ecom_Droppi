@@ -1,0 +1,96 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+	--black: #000000;
+	--white: #ffffff;
+	--charcoal-gray: #444746;
+	--whisper-white: #F6F8FC;
+	--calm-blue: #EAF1FB;
+	--aqua-breeze: #C2E7FF;
+	--pale-periwinkle: #D3E3FD;
+	--dusty-blue: #DADCE0;
+	--royal-blue: #0B57D0;
+	--midnight-navy: #041E49;
+	--gray-light: #3c404314;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+body {
+	overflow: hidden;
+	min-width: 100%;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	background: var(--bg-default);
+	transition: background-color .5s, color 0.1s;
+	line-height: 13px;
+	color: var(--black);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+button,
+input {
+	border: none;
+	outline: none;
+}
+
+form {
+	display: block;
+}
+
+@media (max-width: 575.98px) {
+	body {
+		font-size: 16px;
+		line-height: 16px;
+	}
+}
+
+/* Small devices (màn hình nhỏ, ví dụ: điện thoại dọc) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	body {
+		font-size: 15px;
+		line-height: 15px;
+	}
+}
+
+/* Medium devices (tablet và một số màn hình nhỏ hơn) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	body {
+		font-size: 14px;
+		line-height: 14px;
+	}
+}
+
+/* Large devices (laptop và màn hình lớn hơn) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	body {
+		font-size: 13px;
+		line-height: 13px;
+	}
+}
+
+/* Extra large devices (màn hình rất lớn) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+	body {
+		font-size: 12px;
+		line-height: 12px;
+	}
+}

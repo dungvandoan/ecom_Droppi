@@ -20,6 +20,11 @@ const router = createRouter({
 			path: '/san-pham/:nameDetail',
 			name: 'productName',
 			component: () => import('../views/ProDetail.vue')
+		},
+		{
+			path: '/lien-he',
+			name: 'contact',
+			component: () => import('../views/Contact.vue')
 		}
 	]
 })

@@ -5,14 +5,29 @@
 </script>
 <template>
 	<span class="proItenStar">
-		<StarFill />
-		<StarFill />
-		<StarFill />
-		<StarHalf />
-		<Star />
+		<Star :setWidth="widthStar" :setHeight="widthStar" :setColor="colorStar" />
+		<Star :setWidth="widthStar" :setHeight="widthStar" :setColor="colorStar" />
+		<Star :setWidth="widthStar" :setHeight="widthStar" :setColor="colorStar" />
+		<Star :setWidth="widthStar" :setHeight="widthStar" :setColor="colorStar" />
+		<Star :setWidth="widthStar" :setHeight="widthStar" :setColor="colorStar" />
 	</span>
 
 </template>
-
-<style scoped>
-</style>
+<script>
+	export default {
+		props: {
+			widthStar: {
+				type: Number,
+			},
+			colorStar: {
+				type: String,
+				default: `var(--gray-medium)`
+			}
+		},
+		data() {
+			return {
+				vote: 4
+			}
+		}
+	}
+</script>

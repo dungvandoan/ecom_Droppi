@@ -1,38 +1,43 @@
+<script setup>
+	import JsonStore from '../data/store.json'
+</script>
 <template>
 	<section class="footer">
-		<div class="footer-main">
+		<div class="footer-main d-flex">
 			<div class="col col-1">
-				<div class="ft-content">
-					<h4 class="ft-title">CÔNG TY TNHH DANDELION VIỆT NAM</h4>
+				<div class="ft-content mx-1">
+					<h4 class="ft-title uppercase">
+						{{ json.nameCTY }}
+					</h4>
 					<p>
 						<span>Mã số thuế:</span>
-						0317251228
+						{{ json.ma_so_thue }}
 					</p>
 					<p>
 						<span>Địa chỉ:</span>
-						39A Tạ Hiện, Khu phố 1, Phường Thạnh Mỹ Lợi, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam
+						{{ json.dia_chi }}
 					</p>
 					<p>
 						<span>Điện thoại:</span>
-						19003126
+						{{ json.dien_thoai }}
 					</p>
 					<p>
 						<span>Email:</span>
-						hotro@droppii.com
+						{{ json.email }}
 					</p>
 					<p>
 						<span>STK:</span>
-						110611768688
+						{{ json.STK }}
 					</p>
 					<p>
 						<span>Chi nhánh:</span>
-						Ngân hàng Thương mại cổ phần Công Thương Việt Nam (Vietinbank) – chi nhánh Thủ Thiêm
+						{{ json.chi_nhanh }}
 					</p>
 				</div>
 			</div>
 			<div class="col col-2">
 				<div class="ft-content">
-					<h4 class="ft-title">DỊCH VỤ KHÁCH HÀNG</h4>
+					<h4 class="ft-title uppercase">DỊCH VỤ KHÁCH HÀNG</h4>
 					<ul class="cus-service">
 						<li class="cus-item"><a href="#" class="cus-link">Hướng dẫn đặt hàng</a></li>
 						<li class="cus-item"><a href="#" class="cus-link">Chính sách kiểm hàng</a></li>
@@ -49,7 +54,7 @@
 			</div>
 			<div class="col col-3">
 				<div class="ft-content">
-					<h4 class="ft-title">DANH MỤC SẢN PHẨM</h4>
+					<h4 class="ft-title uppercase">DANH MỤC SẢN PHẨM</h4>
 					<ul class="cate-product">
 						<li class="cate-item"><a href="#" class="cate-link">Gia dụng & Đời sống</a></li>
 						<li class="cate-item"><a href="#" class="cate-link">Sức khỏe & Làm đẹp</a></li>
@@ -66,7 +71,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer-bottom">
+		<div class="footer-bottom d-flex align-items-center justify-content-between">
 			<div class="copyright">
 				<p>Copyright 2023 © DoanDung</p>
 			</div>
@@ -80,17 +85,22 @@
 </template>
 
 <script>
+	export default {
+		data() {
+			return {
+				json: JsonStore,
+			}
+		}
+	}
 </script>
 
 <style>
 	.footer {
-		margin-top: 30px;
-		border-top: 2px solid var(--cl-secondary);
+		border-top: 2px solid var(--gray-medium);
 	}
 
 	.footer-main {
 		padding: 50px 60px 30px;
-		display: flex;
 	}
 
 	.col {
@@ -104,7 +114,6 @@
 	}
 
 	.ft-content {
-		padding: 0 10px;
 		box-sizing: border-box;
 	}
 
@@ -112,13 +121,12 @@
 		margin-bottom: 10px;
 		font-size: 16px;
 		line-height: 22px;
-		text-transform: uppercase;
 	}
 
 	.ft-content p,
-	.ft-content ul li a{
+	.ft-content ul li a {
 		line-height: 24px;
-		color: var(--cl-text-sendary);
+		color: var(--gray-dark);
 		margin-bottom: 5px;
 	}
 
@@ -153,10 +161,47 @@
 	.footer-bottom {
 		min-height: 75px;
 		padding: 0 75px;
-		background: var(--cl-default);
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		color: var(--bg-default);
+		background: var(--yellow-medium);
+		color: var(--white);
+	}
+
+
+	/* css container */
+	@media (max-width: 575.98px) {
+		.footer-main {
+			display: grid;
+			grid-gap: 30px;
+		}
+
+		.ft-content {
+			margin: 0;
+		}
+		.footer-bottom {
+			padding: 10px;
+			flex-direction: column;
+		}
+
+	}
+
+	/* Medium devices (tablet và một số màn hình nhỏ hơn) */
+	@media (min-width: 576px) and (max-width: 991.98px) {
+		.footer-main {
+			display: grid;
+			grid-gap: 30px;
+		}
+
+		.ft-content {
+			margin: 0;
+		}
+
+		.col-1 {
+			grid-column: 1 / span 2;
+			gird-row: 1;
+		}
+
+		.col-4 {
+			grid-column: 1 / span 2;
+			gird-row: 3;
+		}
 	}
 </style>
