@@ -1,4 +1,7 @@
 <template>
+	<section class="proItemContent">
+		
+	</section>
 </template>
 
 <script>

@@ -1,8 +1,6 @@
 [{
 		"id": 1,
-		"txtLink": "may-loc-nuoc-nong-lanh-watek-model-wt-4200uf",
 		"name": "Máy lọc nước nóng lạnh Watek, Model: WT-4200-UF",
-		"img": "/img-pro/WT-4200-UF-web.jpg",
 		"thumbnail": ["/img-pro/p1/WT-4200-UF.jpg", "/img-pro/p1/WT-4200-UF-web.jpg"],
 		"price": 15500000,
 		"category": "thiết bị gia dụng & đời sống",
@@ -12,9 +10,7 @@
 	},
 	{
 		"id": 2,
-		"txtLink": "dung-cu-massage-chan-comefy-therapy-havelnut-of-0608-mau-nau",
 		"name": "Dụng cụ Massage chân Comefy Therapy – Havelnut (OF-0608) màu nâu",
-		"img": "/img-pro/Comfy-Therapy.png",
 		"thumbnail": ["/img-pro/p2/Comfy-Therapy.png", "/img-pro/p2/Comfy-Therapy-2.png",
 			"/img-pro/p2/Comfy-Therapy-4.png", "/img-pro/p2/Comfy-Therapy-5.png"
 		],
@@ -26,9 +22,7 @@
 	},
 	{
 		"id": 3,
-		"txtLink": "goi-massage-kem-mieng-che-mat-ngu-ol-0502x",
 		"name": "Gối massage kèm miếng che mắt ngủ (OL-0502X)",
-		"img": "/img-pro/Tinkle-X-1.jpg",
 		"thumbnail": ["/img-pro/p3/Tinkle-X-1.jpg", "/img-pro/p3/Tinkle-X-2.jpg", "/img-pro/p3/Tinkle-X-3.jpg"],
 		"price": 799000,
 		"category": "thiết bị hỗ trợ sức khoẻ",
@@ -38,9 +32,7 @@
 	},
 	{
 		"id": 4,
-		"txtLink": "gao-lua-vit-st25-thuan-thien-5kg",
 		"name": "Gạo lúa vịt ST25 Thuận Thiên 5kg",
-		"img": "/img-pro/Gao-ST25-5kg-1-510x493.jpg",
 		"thumbnail": ["/img-pro/p4/Gao-ST25-5kg-1-510x493.jpg", "/img-pro/p4/Gao-st25-5kg-2048x1979.jpg",
 			"/img-pro/p4/gao-st25-5kg-3.jpg", "/img-pro/p4/Gao-ST25-5kg-4.jpg"
 		],
@@ -52,9 +44,7 @@
 	},
 	{
 		"id": 1,
-		"txtLink": "may-loc-nuoc-nong-lanh-watek-model-wt-4200uf",
 		"name": "Máy lọc nước nóng lạnh Watek, Model: WT-4200-UF",
-		"img": "/img-pro/WT-4200-UF-web.jpg",
 		"thumbnail": ["/img-pro/p1/WT-4200-UF.jpg", "/img-pro/p1/WT-4200-UF-web.jpg"],
 		"price": 15500000,
 		"category": "thiết bị gia dụng & đời sống",
@@ -64,9 +54,7 @@
 	},
 	{
 		"id": 2,
-		"txtLink": "dung-cu-massage-chan-comefy-therapy-havelnut-of-0608-mau-nau",
 		"name": "Dụng cụ Massage chân Comefy Therapy – Havelnut (OF-0608) màu nâu",
-		"img": "/img-pro/Comfy-Therapy.png",
 		"thumbnail": ["/img-pro/p2/Comfy-Therapy.png", "/img-pro/p2/Comfy-Therapy-2.png",
 			"/img-pro/p2/Comfy-Therapy-4.png", "/img-pro/p2/Comfy-Therapy-5.png"
 		],
@@ -78,9 +66,7 @@
 	},
 	{
 		"id": 3,
-		"txtLink": "goi-massage-kem-mieng-che-mat-ngu-ol-0502x",
 		"name": "Gối massage kèm miếng che mắt ngủ (OL-0502X)",
-		"img": "/img-pro/Tinkle-X-1.jpg",
 		"thumbnail": ["/img-pro/p3/Tinkle-X-1.jpg", "/img-pro/p3/Tinkle-X-2.jpg", "/img-pro/p3/Tinkle-X-3.jpg"],
 		"price": 799000,
 		"category": "thiết bị hỗ trợ sức khoẻ",
@@ -90,9 +76,7 @@
 	},
 	{
 		"id": 4,
-		"txtLink": "gao-lua-vit-st25-thuan-thien-5kg",
 		"name": "Gạo lúa vịt ST25 Thuận Thiên 5kg",
-		"img": "/img-pro/Gao-ST25-5kg-1-510x493.jpg",
 		"thumbnail": ["/img-pro/p4/Gao-ST25-5kg-1-510x493.jpg", "/img-pro/p4/Gao-st25-5kg-2048x1979.jpg",
 			"/img-pro/p4/gao-st25-5kg-3.jpg", "/img-pro/p4/Gao-ST25-5kg-4.jpg"
 		],

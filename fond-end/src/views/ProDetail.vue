@@ -1,7 +1,7 @@
 <script setup>
 	import ProItemDetail from '../components/product/ProItemDetail.vue'
 	import ProItemRelated from '../components/product/ProItemRelated.vue'
-	import Category from '../components/category/CatItemList.vue'
+	import Category from '../components/aside/CatItemList.vue'
 </script>
 <template>
 	<main>

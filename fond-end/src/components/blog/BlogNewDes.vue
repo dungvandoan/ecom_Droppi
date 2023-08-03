@@ -1,6 +1,6 @@
 <template>
-	<div class="blogNewDes">
-		<p>{{newDes}}</p>
+	<div class="blogNewDes my-2">
+		<p class="txt-des fw-400">{{newDes}}</p>
 	</div>
 </template>
 
@@ -12,14 +12,10 @@
 	}
 </script>
 
-<style scoped>
-	.blogNewDes{
-		margin: 20px 0;
-	}
-	p {
-		color: var(--cl-text-secondary);
+<style>
+	.txt-des {
+		color: var(--gray-dark);
 		font-size: 16px;
-		font-weight: 400;
 		line-height: 24px;
 		text-overflow: ellipsis;
 		max-height: 72px;

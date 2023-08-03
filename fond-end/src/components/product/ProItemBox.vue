@@ -4,12 +4,14 @@
 	import ProItemName from './ProItemName.vue'
 	import ProItemStar from './ProItemStar.vue'
 	import ProItemPrice from './ProItemPrice.vue'
+	
+	import { mixinGlobal } from '../../mixin/global.js';
 </script>
 <template>
 	<div class="proItemBox m-1">
-		<a :href="`/san-pham/${items.txtLink}`" class="box">
+		<a :href="`/san-pham/${getTxtLink(items.name)}`" class="box">
 			<div class="proItemImage">
-				<ProItemImage :srcImage="items.img" />
+				<ProItemImage :srcImage="items.thumbnail[0]" />
 			</div>
 			<div class="wrapperPro">
 				<div class="proItemName my-1 fw-600">
@@ -26,12 +28,18 @@
 
 <script>
 	export default {
+		mixins: [mixinGlobal],
 		props: {
 			items: {
 				type: Object,
 				requied: true
 			}
-		}
+		},
+		methods: {
+			getTxtLink(v){
+				return this.removeDiacritics(v).split(" ").join("-");
+			}
+		},
 	}
 </script>
 

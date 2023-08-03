@@ -1,6 +1,6 @@
 <template>
 	<div class="blogNewComment">
-		<h6>Bình luận: <span>{{ newComment }}</span></h6>
+		<h6 class="fw-400">Bình luận: <span class="ms-1">{{ newComment }}</span></h6>
 	</div>
 </template>
 
@@ -12,18 +12,14 @@
 	}
 </script>
 
-<style scoped>
-	.blogNewComment {}
-
+<style>
 	.blogNewComment h6 {
 		font-size: 16px;
-		font-weight: 400;
 		line-height: 26px;
-		color: var(--cl-text-secondary);
-		margin: 10px 30px 50px ;
+		color: var(--gray-dark);
 	}
 	.blogNewComment h6>span{
-		color: var(--cl-hover-menu-top);
-		margin-left: 10px;
+		text-transform: uppercase;
+		color: var(--green-medium);
 	}
 </style>

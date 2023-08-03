@@ -1,5 +1,5 @@
 <template>
-	<div class="blogNewTitle">
+	<div class="blogNewTitle fw-600">
 		<h3>{{newTitle}}</h3>
 	</div>
 </template>
@@ -12,10 +12,9 @@
 	}
 </script>
 
-<style scoped>
+<style>
 	h3 {
 		font-size: 24px;
-		font-weight: 600;
 		line-height: 31px;
 		text-overflow: ellipsis;
 		max-height: 62px;

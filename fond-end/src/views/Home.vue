@@ -1,5 +1,5 @@
 <script setup>
-	import Category from '../components/category/CatItemList.vue'
+	import Category from '../components/aside/CatItemList.vue'
 	import ProItemRelated from '../components/product/ProItemRelated.vue'
 	import ProductList from '../components/product/ProItemList.vue'
 </script>

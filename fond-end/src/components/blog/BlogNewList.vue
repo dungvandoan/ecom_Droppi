@@ -1,11 +1,11 @@
 <script setup>
 	import BlogNewBox from './BlogNewBox.vue'
-	
+
 	import JsonNew from '../data/news.json'
 </script>
 <template>
-	<section class="blogNewList">
-		<div class="wrapper-box" v-for="data in json" :key="data.id">
+	<section class="blogNewList d-flex flex-wrap">
+		<div class="wrapper-box-blog" v-for="data in json" :key="data.id">
 			<BlogNewBox :items="data" />
 		</div>
 	</section>
@@ -15,26 +15,27 @@
 	export default {
 		data() {
 			return {
-				json : JsonNew,
+				json: JsonNew,
 			}
 		}
 	}
 </script>
 
-<style scoped>
-	.blogNewLisT{
-		display: flex;
+<style>
+	.blogNewList {
 		flex-direction: column;
-		flex-wrap: wrap;
 	}
-	.wrapper-box{
+
+	.wrapper-box-blog {
 		padding: 30px 0;
-		border-bottom: 1px solid var(--bg-secondary);
+		border-bottom: 1px solid var(--gray-medium);
 	}
-	.wrapper-box:first-child{
+
+	.wrapper-box-blog:first-child {
 		padding-top: 0;
 	}
-	.wrapper-box:last-child{
+
+	.wrapper-box:last-child {
 		padding-bottom: 0;
 		border-bottom: none;
 	}

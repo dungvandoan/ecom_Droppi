@@ -10,7 +10,7 @@
 
 <template>
 	<header>
-		<Navbar />
+		<Navbar/>
 		<Breadcrumb />
 	</header>
 	<RouterView />

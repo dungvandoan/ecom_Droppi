@@ -1,6 +1,11 @@
 <script setup>
 	import JsonPro from '../data/products.json'
+	import JsonNew from '../data/news.json'
 	import ChevronRight from '../../assets/icon-svg/chevron-right.vue';
+
+	import {
+		mixinGlobal
+	} from '../../mixin/global.js';
 </script>
 <template>
 	<section class="breadcrumb">
@@ -17,10 +22,12 @@
 
 <script>
 	export default {
+		mixins: [mixinGlobal],
 		data() {
 			return {
 				listLink: [],
-				json: JsonPro,
+				jsonPro: JsonPro,
+				jsonNew: JsonNew,
 			}
 		},
 		watch: {
@@ -34,14 +41,20 @@
 			},
 			buildBreadcrumbList(currentLink) {
 				const breadcrumbList = [];
-				if (currentLink === '/') breadcrumbList.push('sản phẩm');
+				if (currentLink === '/') breadcrumbList.push('home');
 				if (currentLink === '/blog') breadcrumbList.push('blog');
 				if (currentLink === '/lien-he') breadcrumbList.push('liên hệ');
-
-				const x = (this.$route.path.split('/')).filter(item => item !== "")
+				
+				const x = (this.$route.path.split('/')).filter(item => item !== "");
 				if (x.length >= 2) {
-					const y = this.json.find(data => data.txtLink === x[1]);
-					breadcrumbList.push('sản phẩm', y.category, y.name)
+					if(x[0] === "san-pham"){
+						const y = this.jsonPro.find(data => this.removeDiacritics(data.name).split(' ').join("-") === x[1]);
+						breadcrumbList.push('home','sản phẩm', y.category, y.name);
+					}
+					if(x[0] === "blog"){
+						const y = this.jsonNew.find(data => this.removeDiacritics(data.title).split(' ').join("-") === x[1]);
+						breadcrumbList.push('home','blog', y.category, y.title);
+					}
 				}
 				return breadcrumbList;
 			},
@@ -49,7 +62,7 @@
 				if (item === 'sản phẩm') return '/';
 				if (item === 'blog') return '/blog';
 				if (item === 'liên hệ') return '/lien-he';
-			}
+			},
 		},
 	}
 </script>
@@ -71,7 +84,7 @@
 	}
 
 	@media (max-width: 991.98px) {
-		.breadcrumb{
+		.breadcrumb {
 			padding: 5px 30px;
 			font-size: 10px;
 		}

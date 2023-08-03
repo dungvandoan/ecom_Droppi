@@ -4,9 +4,6 @@
 	import JsonPro from '../data/products.json'
 </script>
 <template>
-	<!-- Sort -->
-	<!-- List ProItemBox -->
-	<!-- Pager -->
 	<section class="proItemList d-flex flex-wrap">
 		<div class="wrapper-box" v-for="data in json" :key="data.id">
 			<ProItemBox :items="data" />

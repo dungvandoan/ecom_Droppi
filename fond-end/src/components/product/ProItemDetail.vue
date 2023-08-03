@@ -12,18 +12,25 @@
 	import Dash from '../../assets/icon-svg/category/dash.vue'
 
 	import JsonPro from '../data/products.json'
+	import {
+		mixinGlobal
+	} from '../../mixin/global.js';
 </script>
 <template>
 	<section class="proDetail d-flex">
 		<div class="product-summary-wrap d-flex">
 			<div class="product-images">
-				<div class="slider-img">
-					<ProItemImage :srcImage="foundProduct.img" />
-				</div>
+				<ul ref="sliderImg" class="slider-img d-flex justify-content-start align-items-center">
+					<li class="slider-item" v-for="(item1,index) in foundProduct.thumbnail" :key="index"
+						:style="{transform: `translateX(${styleItem}px)`}">
+						<ProItemImage :srcImage="item1" />
+					</li>
+				</ul>
 				<div class="pro-thumnail my-3">
 					<ul class="img-thumnail d-flex g10 justify-content-start">
-						<li class="item-img" v-for="items in foundProduct.thumbnail" :key="items.id">
-							<ProItemImage :srcImage="items" />
+						<li class="item-img" :class="{active : index === currentIndex}"
+							v-for="(item2,index) in foundProduct.thumbnail" :key="index" @click="showBigImg(index)">
+							<ProItemImage :srcImage="item2" />
 						</li>
 					</ul>
 				</div>
@@ -64,22 +71,33 @@
 
 <script>
 	export default {
+		mixins: [mixinGlobal],
 		data() {
 			return {
 				json: JsonPro,
 				foundProduct: {},
 				quantity: '1',
+				step: 0,
+				currentIndex: 0,
+				styleItem: 0,
 			}
 		},
 		created() {
 			try {
 				const productName = this.$route.params.nameDetail;
-				this.foundProduct = this.json.find(data => data.txtLink === productName);
+				this.foundProduct = this.json.find(data => this.removeDiacritics(data.name).split(' ').join("-") ===
+					productName);
 			} catch (e) {
 				console.log("báo lỗi", e);
 			}
 		},
+		mounted() {
+			this.setStep();
+		},
 		methods: {
+			setStep() {
+				this.step = this.$refs.sliderImg.scrollWidth;
+			},
 			updateQuantity() {
 				if (this.quantity < 1) {
 					this.quantity = "1";
@@ -95,6 +113,18 @@
 			},
 			preventSelection(event) {
 				event.preventDefault();
+			},
+			showBigImg(val) {
+				if (val > this.currentIndex && val <= this.foundProduct.thumbnail.length - 1) {
+					const n = val - this.currentIndex;
+					this.styleItem = this.styleItem - this.step * n;
+					this.currentIndex = val;
+				}
+				if (val < this.currentIndex && val >= 0) {
+					const n = this.currentIndex - val;
+					this.styleItem = this.styleItem + this.step * n;
+					this.currentIndex = val;
+				}
 			}
 		}
 	};
@@ -113,7 +143,32 @@
 		flex-basis: calc(50% - 15px);
 	}
 
-	.slider-img img {
+	.slider-img {
+		flex-wrap: nowrap;
+		overflow: hidden;
+		overflow-x: auto;
+		cursor: pointer;
+		user-select: none;
+		scroll-behavior: auto;
+		transition: transform 0.3s ease;
+		box-sizing: border-box;
+	}
+
+	.slider-img::-webkit-scrollbar {
+		width: 0;
+		display: none;
+		scroll-behavior: smooth;
+	}
+
+	.slider-item {
+		display: inline-flex;
+		flex-basis: 100%;
+		flex-grow: 0;
+		flex-shrink: 0;
+		transition: transform 0.3s ease;
+	}
+
+	.slider-item>img {
 		height: auto;
 		width: 480px;
 	}
@@ -121,7 +176,7 @@
 	.item-img {
 		border: 2px solid var(--gray-light);
 		box-sizing: border-box;
-		transition: all .1s;
+		transition: all .3s;
 	}
 
 	.item-img img {
@@ -129,7 +184,12 @@
 		height: auto;
 	}
 
+	.item-img.active {
+		border: 2px solid var(--gray-dark);
+	}
+
 	.item-img:hover {
+		cursor: pointer;
 		border: 2px solid var(--gray-dark);
 	}
 
@@ -218,6 +278,7 @@
 		.slider-img img {
 			height: auto;
 			width: 480px;
+			box-sizing: border-box;
 		}
 
 		.form-cart {
@@ -263,7 +324,7 @@
 		.slider-img img {
 			height: auto;
 			width: 360px;
-			border: 1px solid crimson;
+			box-sizing: border-box;
 		}
 
 		.form-cart {
@@ -309,7 +370,7 @@
 		.slider-img img {
 			height: auto;
 			width: 360px;
-			border: 1px solid crimson;
+			box-sizing: border-box;
 		}
 
 		.form-cart {

@@ -4,22 +4,26 @@
 	import BlogNewDes from './BlogNewDes.vue'
 	import BlogNewCategory from './BlogNewCategory.vue'
 	import BlogNewComment from './BlogNewComment.vue'
+
+	import {
+		mixinGlobal
+	} from '../../mixin/global.js';
 </script>
 <template>
-	<div class="blogNewBox">
-		<a href="/" class="new-img">
-			<div class="blogNewImage">
+	<div class="blogNewBox d-flex g20">
+		<a :href="`/blog/${getTxtLink(items.title)}`" class="new-img">
+			<div class="blogNewImage text-center">
 				<BlogNewImage :newImage="items.thumbnail" />
 			</div>
 		</a>
 		<div class="new-content">
 			<BlogNewTitle :newTitle="items.title" />
 			<BlogNewDes :newDes="items.descript" />
-			<span>
+			<span class="d-flex ms-5 my-3 g20">
 				<BlogNewCategory :newCategory="items.category" />
 				<BlogNewComment :newComment="items.comment" />
 			</span>
-			<a href="#" class="btn-more">
+			<a href="#" class="btn-more fw-600 uppercase">
 				đọc thêm
 			</a>
 		</div>
@@ -28,53 +32,95 @@
 
 <script>
 	export default {
+		mixins: [mixinGlobal],
 		props: {
 			items: {
 				type: Object,
 				requied: true
 			}
-		}
+		},
+		methods: {
+			getTxtLink(v) {
+				return this.removeDiacritics(v).split(" ").join("-");
+			}
+		},
 	}
 </script>
 
-<style scoped>
-	.blogNewBox {
-		display: flex;
-		gap: 10px;
+<style>
+	.new-img {
+		flex: 0 0 calc(35%);
 	}
 
-	.new-img {
-		flex: 0 0 calc(35% - 5px);
-	}
-	.blogNewImage {
-		height: 300px;
+	.blogNewImage img {
+		min-height: 300px;
 	}
 
 	.new-content {
-		padding-left: 15px;
-		flex: 0 0 calc(65% - 5px);
-	}
-
-	.new-content span {
-		display: flex;
-		margin-left: 50px;
+		flex: 0 0 calc(65% - 20px);
 	}
 
 	.btn-more {
+		padding: 10px 30px;
 		font-size: 14px;
 		line-height: 19px;
-		font-weight: 600;
-		padding: 11px 30px;
-		text-transform: uppercase;
-		border: 3px solid var(--cl-hover-menu-top);
+		border: 3px solid var(--green-medium);
 		border-radius: 35px;
-		color: var(--cl-hover-menu-top);
+		color: var(--green-medium);
 		transition: all .1s;
-		margin-top: 10px;
 	}
 
 	.btn-more:hover {
-		color: var(--bg-default);
-		background: var(--cl-hover-menu-top);
+		color: var(--white);
+		background: var(--green-medium);
+	}
+
+	@media (max-width: 575.98px) {
+		.blogNewBox {
+			flex-direction: column;
+			margin: 0 10px;
+		}
+
+		.blogNewImage img {
+			min-width: 100px;
+			height: auto;
+		}
+
+		.new-content span {
+			margin-left: 0;
+		}
+	}
+
+	/* Small devices (màn hình nhỏ, ví dụ: điện thoại dọc) */
+	@media (min-width: 576px) and (max-width: 767.98px) {
+		.blogNewBox {
+			flex-direction: column;
+		}
+
+		.blogNewImage img {
+			min-width: 500px;
+			height: auto;
+		}
+	}
+
+	/* Medium devices (tablet và một số màn hình nhỏ hơn) */
+	@media (min-width: 768px) and (max-width: 991.98px) {
+		.new-content span {
+			margin-left: 0;
+		}
+	}
+
+	/* Large devices (laptop và màn hình lớn hơn) */
+	@media (min-width: 992px) and (max-width: 1199.98px) {
+		.new-content span {
+			margin-left: 0;
+		}
+	}
+
+	/* Extra large devices (màn hình rất lớn) */
+	@media (min-width: 1200px) and (max-width: 1399.98px) {
+		.new-content span {
+			margin-left: 20px;
+		}
 	}
 </style>

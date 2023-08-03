@@ -7,10 +7,9 @@
 <template>
 	<section class="proItemRelated my-2 px-1">
 		<h6 class="fw-700 my-2">SẢN PHẨM CÓ LIÊN QUAN</h6>
-		<div class="carousel-container" ref="carouselContainer">
+		<div class="carousel-container">
 			<ul class="carousel d-flex justify-content-start align-items-center" ref="carousel">
-				<li class="carousel-item" :style="{transform: `translateX(${styleItem}px)`}"
-					v-for="(data,index) in items" :key="index">
+				<li class="carousel-item" :style="styleItem" v-for="(data,index) in items" :key="index">
 					<ProItemBox :items="data" />
 				</li>
 			</ul>
@@ -32,18 +31,16 @@
 			return {
 				items: JsonPro,
 				step: 0,
-				styleItem: 0,
-				currentIndex: 0,
-
-				transitioning: false,
+				styleItem: {},
+				tranform: 0,
 				autoPlayInterval: null,
-				autoPlayDelay: 5000
+				autoPlayDelay: 7000
 			}
 		},
 		mounted() {
 			this.setStep();
-			// this.resetTranslate();
-			// this.startAutoPlay();
+			this.startAutoPlay();
+
 		},
 		methods: {
 			setStep() {
@@ -52,37 +49,38 @@
 				this.step = carouselWidth / totalItem;
 			},
 			prev() {
-				if (this.currentIndex === 0) {
-					this.addItemFirst()
-				} else {
-					this.currentIndex = this.currentIndex - 1;
-					this.styleItem = this.styleItem + this.step;
-				}
+				this.resetTransition('prev');
+				this.addItemFirst();
+				setTimeout(() => {
+					this.styleItem =
+						`transform: translateX(${this.tranform = this.tranform + this.step }px);transition: all .3s ease`;
+				}, 100)
 			},
 			next() {
-				if (this.currentIndex + 4 === this.items.length-1) {
-					this.addItemLast()
-				} else {
-					this.currentIndex = this.currentIndex + 1;
-					this.styleItem = this.styleItem - this.step;
-				}
+				this.resetTransition('next');
+				this.addItemLast();
+				setTimeout(() => {
+					this.styleItem =
+						`transform: translateX(${this.tranform = this.tranform - this.step }px);transition: all .3s ease`;
+				}, 100);
 			},
 			addItemFirst() {
-				const item = this.items.pop()
-				this.items.unshift(item)
-				// this.resetTranslate()
+				const item = this.items.pop();
+				this.items.unshift(item);
 			},
 			addItemLast() {
-				const item = this.items.shift()
+				const item = this.items.shift();
 				this.items.push(item);
-				// this.resetTranslate()
 			},
-			// resetTranslate() {
-			// 	console.log(this.styleItem/3);
-			// 	if(this.styleItem/3 === -this.step){
-			// 		this.styleItem = 0;
-			// 	}
-			// },
+			resetTransition(v) {
+				if (v === 'prev') {
+					this.styleItem = `transition:none;transform: translateX(${this.tranform = -this.step}px)`
+				}
+				if (v === 'next') {
+					this.styleItem =
+						`transition:none;transform: translateX(${this.tranform = this.step}px);justify-content: flex-end;`
+				}
+			},
 			startAutoPlay() {
 				this.autoPlayInterval = setInterval(() => {
 					this.next();
@@ -119,7 +117,6 @@
 		cursor: pointer;
 		user-select: none;
 		scroll-behavior: auto;
-		transition: transform 0.3s ease;
 	}
 
 	.carousel-item {
@@ -128,6 +125,7 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		transition: transform 0.3s ease;
+
 	}
 
 	.carousel-item .proItemImage {
@@ -149,14 +147,11 @@
 
 	.control-left {
 		left: 10px;
-
 	}
 
 	.control-right {
 		right: 10px;
-
 	}
-
 
 	@media (max-width: 575.98px) {
 		.carousel-item {
