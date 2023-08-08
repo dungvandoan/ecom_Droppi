@@ -1,5 +1,6 @@
 <script setup>
 	import ProItemDetail from '../components/product/ProItemDetail.vue'
+	import ProItemContent from '../components/product/ProItemContent.vue'
 	import ProItemRelated from '../components/product/ProItemRelated.vue'
 	import Category from '../components/aside/CatItemList.vue'
 </script>
@@ -9,6 +10,7 @@
 			<section class="detail-page d-flex justify-content-between">
 				<div class="content-page d-flex">
 					<ProItemDetail />
+					<ProItemContent />
 					<ProItemRelated />
 				</div>
 				<aside class="aside">
