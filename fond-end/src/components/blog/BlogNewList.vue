@@ -35,7 +35,7 @@
 		padding-top: 0;
 	}
 
-	.wrapper-box:last-child {
+	.wrapper-box-blog:last-child {
 		padding-bottom: 0;
 		border-bottom: none;
 	}

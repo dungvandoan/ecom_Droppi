@@ -2,7 +2,7 @@
 	import ProItemDetail from '../components/product/ProItemDetail.vue'
 	import ProItemContent from '../components/product/ProItemContent.vue'
 	import ProItemRelated from '../components/product/ProItemRelated.vue'
-	import Category from '../components/aside/CatItemList.vue'
+	import ViewHistory from '../components/aside/ViewHistory.vue'
 </script>
 <template>
 	<main>
@@ -14,7 +14,7 @@
 					<ProItemRelated />
 				</div>
 				<aside class="aside">
-					<Category />
+					<ViewHistory />
 				</aside>
 			</section>
 		</div>
@@ -36,11 +36,11 @@
 	.content-page {
 		flex-basis: calc(75% - 2px);
 		flex-direction: column;
-		overflow: auto;
+		overflow: hidden;
 	}
 
 	.aside {
-		flex-basis: calc(20% - 20px);
+		flex-basis: calc(25% - 20px);
 	}
 
 	/* Medium devices (tablet và một số màn hình nhỏ hơn) */
@@ -61,7 +61,7 @@
 		}
 
 		.aside {
-			flex: 0 0 calc(20% - 5px);
+			flex: 0 0 calc(25% - 5px);
 		}
 
 		.content-page {
@@ -72,7 +72,7 @@
 	/* Extra large devices (màn hình rất lớn) */
 	@media (min-width: 1200px) and (max-width: 1399.98px) {
 		.aside {
-			flex: 0 0 calc(20% - 25px);
+			flex: 0 0 calc(25% - 25px);
 		}
 
 		.content-page {

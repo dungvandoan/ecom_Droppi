@@ -12,6 +12,16 @@ const router = createRouter({
 			component: HomeView
 		},
 		{
+			path: '/san-pham',
+			name: 'shop',
+			component: () => import('../views/Shop.vue')
+		},
+		{
+			path: '/san-pham/page/:pageNumber',
+			name: 'shopPage',
+			component: () => import('../views/Shop.vue')
+		},
+		{
 			path: '/blog',
 			name: 'blog',
 			component: () => import('../views/Blog.vue')

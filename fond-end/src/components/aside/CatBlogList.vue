@@ -2,7 +2,7 @@
 	import Close from '../../assets/icon-svg/category/close.vue'
 	import SliderCate from '../../assets/icon-svg/category/sliders.vue'
 
-	import JsonCat from '../data/cateProduct.json'
+	import JsonCateBlog from '../data/cateblog.json'
 </script>
 <template>
 	<section class="catItemList" :class="{actionShow : isShow }">
@@ -25,7 +25,7 @@
 	export default {
 		data() {
 			return {
-				data: JsonCat,
+				data: JsonCateBlog,
 				isDropdownOpen: false,
 				isShow: false,
 			}

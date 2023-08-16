@@ -8,7 +8,7 @@
 	<section class="proItemRelated my-2 px-1">
 		<h6 class="fw-700 my-2">SẢN PHẨM CÓ LIÊN QUAN</h6>
 		<div class="carousel-container">
-			<ul class="carousel d-flex justify-content-start align-items-center" ref="carousel">
+			<ul class="carousel d-flex align-items-center" ref="carousel" :style="cssCarousel">
 				<li class="carousel-item" :style="styleItem" v-for="(data,index) in items" :key="index">
 					<ProItemBox :items="data" />
 				</li>
@@ -29,18 +29,24 @@
 	export default {
 		data() {
 			return {
+				cssCarousel: '',
 				items: JsonPro,
 				step: 0,
 				styleItem: {},
-				tranform: 0,
-				autoPlayInterval: null,
-				autoPlayDelay: 7000
+				currentItem: 0,
+				isAutoPlayPaused: false,
+			}
+		},
+		computed: {
+			getItem() {
+				const startIndex = (this.currentItem - 1) * this.itemsPerPage;
+				const endIndex = startIndex + this.itemsPerPage;
+				this.showProducts = this.allProducts.slice(startIndex, endIndex);
 			}
 		},
 		mounted() {
 			this.setStep();
-			this.startAutoPlay();
-
+			// this.startAutoPlay();
 		},
 		methods: {
 			setStep() {
@@ -53,39 +59,51 @@
 				this.addItemFirst();
 				setTimeout(() => {
 					this.styleItem =
-						`transform: translateX(${this.tranform = this.tranform + this.step }px);transition: all .3s ease`;
-				}, 100)
+						`transform: translateX(0px);transition: all .3s ease`;
+					this.items.pop();
+				}, 100);
 			},
 			next() {
 				this.resetTransition('next');
 				this.addItemLast();
 				setTimeout(() => {
 					this.styleItem =
-						`transform: translateX(${this.tranform = this.tranform - this.step }px);transition: all .3s ease`;
+						`transform: translateX(0px);transition: all .3s ease`;
+					this.items.shift();
 				}, 100);
 			},
 			addItemFirst() {
-				const item = this.items.pop();
-				this.items.unshift(item);
+				const x = this.items[this.items.length - 1];
+				this.items.unshift(x);
 			},
 			addItemLast() {
-				const item = this.items.shift();
-				this.items.push(item);
+				const x = this.items[0];
+				this.items.push(x);
 			},
 			resetTransition(v) {
 				if (v === 'prev') {
-					this.styleItem = `transition:none;transform: translateX(${this.tranform = -this.step}px)`
+					this.cssCarousel = `justify-content: flex-start;`;
+					this.styleItem = `transition:none;transform: translateX(${- this.step}px)`
 				}
 				if (v === 'next') {
-					this.styleItem =
-						`transition:none;transform: translateX(${this.tranform = this.step}px);justify-content: flex-end;`
+					this.cssCarousel = `justify-content: flex-end;`;
+					this.styleItem = `transition:none;transform: translateX(${this.step}px);`
 				}
 			},
 			startAutoPlay() {
-				this.autoPlayInterval = setInterval(() => {
-					this.next();
-				}, this.autoPlayDelay);
+				if (this.isAutoPlayPaused === false) {
+					setInterval(() => {
+						this.next();
+					}, 2500);
+				}
 			},
+			// pauseAutoPlay() {
+			// 	this.isAutoPlayPaused = true;
+			// 	setTimeout(() => {
+			// 		this.isAutoPlayPaused = false;
+			// 		this.startAutoPlay();
+			// 	}, 10000);
+			// },
 		}
 	}
 </script>
@@ -113,7 +131,6 @@
 	.carousel {
 		flex-wrap: nowrap;
 		overflow: hidden;
-		overflow-x: auto;
 		cursor: pointer;
 		user-select: none;
 		scroll-behavior: auto;
@@ -125,11 +142,14 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		transition: transform 0.3s ease;
-
 	}
 
 	.carousel-item .proItemImage {
-		min-height: 0;
+		min-height: 150px;
+	}
+
+	.carousel-item .proItemImage img {
+		height: 170px;
 	}
 
 	.btn-control {
@@ -158,7 +178,7 @@
 			flex-basis: 50%;
 		}
 
-		.proItemImage {
+		.carousel-item .proItemImage {
 			min-height: 100px;
 		}
 	}
@@ -169,7 +189,7 @@
 			flex-basis: calc(100%/3);
 		}
 
-		.proItemImage {
+		.carousel-item .proItemImage {
 			min-height: 100px;
 		}
 	}
@@ -180,28 +200,26 @@
 			flex-basis: 25%;
 		}
 
-		.proItemImage {
+		.carousel-item .proItemImage {
 			min-height: 150px;
 		}
 	}
 
 	/* Large devices (laptop và màn hình lớn hơn) */
 	@media (min-width: 992px) and (max-width: 1199.98px) {
-		.proItemImage {
+		.carousel-item {
+			flex-basis: 25%;
+		}
+
+		.carousel-item .proItemImage {
 			min-height: 170px;
 		}
 	}
 
 	/* Extra large devices (màn hình rất lớn) */
 	@media (min-width: 1200px) and (max-width: 1399.98px) {
-		.proItemImage {
-			min-height: 180px;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.proItemImage {
-			min-height: 215px;
+		.carousel-item .proItemImage {
+			min-height: 150px;
 		}
 	}
 </style>

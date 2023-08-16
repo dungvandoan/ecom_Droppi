@@ -1,6 +1,6 @@
 <script setup>
 	import BlogList from '../components/blog/BlogNewList.vue'
-	import Aside from '../components/aside/CatItemList.vue'
+	import CatBlogList from '../components/aside/CatBlogList.vue'
 </script>
 <template>
 	<main>
@@ -10,7 +10,7 @@
 					<BlogList />
 				</div>
 				<aside class="wrapper aside">
-					<Aside />
+					<CatBlogList />
 				</aside>
 			</section>
 		</div>

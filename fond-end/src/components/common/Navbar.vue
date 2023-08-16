@@ -17,22 +17,22 @@
 			<img src="../../assets/images/amazon.png" alt="img-logo" class="img-fluid">
 		</RouterLink>
 		<ul class="navbar-menu d-flex align-items-center justify-content-center">
-			<li class="nav-item" :class="{ active: currentPath === '' }">
+			<li class="nav-item" :class="{ active: currentPath[0] === '' }">
 				<RouterLink to="/" class="nav-link uppercase fw-600">
 					<IconHome :setWidth="25" :setHeight="25" :setColor="getColor()" />
 				</RouterLink>
 			</li>
-			<li class="nav-item" :class="{ active: currentPath === ''}">
-				<RouterLink to="/" class="nav-link uppercase fw-600">
+			<li class="nav-item" :class="{ active: currentPath[0] === 'san-pham'}">
+				<RouterLink to="/san-pham" class="nav-link uppercase fw-600">
 					sản phẩm
 				</RouterLink>
 			</li>
-			<li class="nav-item" :class="{ active: currentPath === '/blog'}">
+			<li class="nav-item" :class="{ active: currentPath[0] === 'blog'}">
 				<RouterLink to="/blog" class="nav-link uppercase fw-600">
 					blog
 				</RouterLink>
 			</li>
-			<li class="nav-item" :class="{ active: currentPath === '/lien-he'}">
+			<li class="nav-item" :class="{ active: currentPath[0] === 'lien-he'}">
 				<RouterLink to="/lien-he" class="nav-link uppercase fw-600">
 					liên hệ
 				</RouterLink>
@@ -58,7 +58,8 @@
 				</li>
 				<li class="sidenav-item text-center my-1"><a href="/blog" class="sidenav-link  uppercase fw900">blog</a>
 				</li>
-				<li class="sidenav-item text-center my-1"><a href="/lien-he" class="sidenav-link  uppercase fw900">liên hệ</a>
+				<li class="sidenav-item text-center my-1"><a href="/lien-he" class="sidenav-link  uppercase fw900">liên
+						hệ</a>
 				</li>
 				<li class="sidenav-item text-center my-1"><a href="/" class="sidenav-link  uppercase fw900">giỏ hàng</a>
 				</li>
@@ -88,7 +89,8 @@
 		},
 		computed: {
 			currentPath() {
-				return this.$route.path;
+				console.log((this.$route.path.split('/')).filter(item => item !== ""));
+				return (this.$route.path.split('/')).filter(item => item !== "");
 			},
 		},
 		methods: {

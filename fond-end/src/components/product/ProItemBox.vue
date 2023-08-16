@@ -56,12 +56,13 @@
 
 	.proItemImage {
 		width: 100%;
-		max-height: 300px;
-		height: auto;
+		text-align: center;
+		max-height: 200px;
 	}
 
 	.proItemImage img {
-		height: 100%;
+		min-height: 100px;
+		max-height: 180px;
 	}
 
 	.proItemName>h3 {
@@ -84,13 +85,22 @@
 	@media (max-width: 575.98px) {
 		.proItemImage {
 			min-height: 100px;
+			max-height: 250px;
+		}
+		.proItemImage img {
+			min-height: 100px;
+			max-height: 200px;
 		}
 	}
 
 	/* Small devices (màn hình nhỏ, ví dụ: điện thoại dọc) */
 	@media (min-width: 576px) and (max-width: 767.98px) {
 		.proItemImage {
+			min-height: 75px;
+		}
+		.proItemImage img {
 			min-height: 100px;
+			max-height: 150px;
 		}
 	}
 
@@ -98,26 +108,36 @@
 	@media (min-width: 768px) and (max-width: 991.98px) {
 		.proItemImage {
 			min-height: 150px;
+			max-height: 200px;
+		}
+		.proItemImage img {
+			min-height: 100px;
+			max-height: 170px;
 		}
 	}
 
 	/* Large devices (laptop và màn hình lớn hơn) */
 	@media (min-width: 992px) and (max-width: 1199.98px) {
 		.proItemImage {
-			min-height: 170px;
+			min-height: 100px;
+			max-height: 170px;
+		}
+		.proItemImage img {
+			min-height: 100px;
+			max-height: 165px;
 		}
 	}
 
 	/* Extra large devices (màn hình rất lớn) */
 	@media (min-width: 1200px) and (max-width: 1399.98px) {
 		.proItemImage {
-			min-height: 180px;
+			min-height: 100px;
+			max-height: 200px;
+		}
+		.proItemImage img {
+			min-height: 100px;
+			max-height: 145px;
 		}
 	}
 
-	@media (min-width: 1400px) {
-		.proItemImage {
-			min-height: 215px;
-		}
-	}
 </style>

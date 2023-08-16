@@ -1,6 +1,6 @@
 <script setup>
 	import BlogNewDetail from '../components/blog/BlogNewDetail.vue'
-	import Category from '../components/aside/CatItemList.vue'
+	import CatBlogList from '../components/aside/CatBlogList.vue'
 </script>
 
 <template>
@@ -11,7 +11,7 @@
 					<BlogNewDetail />
 				</div>
 				<aside class="aside">
-					<Category />
+					<CatBlogList />
 				</aside>
 			</section>
 		</div>

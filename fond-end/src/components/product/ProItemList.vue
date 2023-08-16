@@ -1,24 +1,23 @@
 <script setup>
 	import ProItemBox from './ProItemBox.vue'
 	import ProItemRelated from './ProItemRelated.vue'
-	import JsonPro from '../data/products.json'
 </script>
 <template>
-	<section class="proItemList d-flex flex-wrap">
-		<div class="wrapper-box" v-for="data in json" :key="data.id">
+	<section class="proItemList d-flex flex-wrap px-5">
+		<div class="wrapper-box" v-for="data in products" :key="data">
 			<ProItemBox :items="data" />
 		</div>
 	</section>
 </template>
 
 <script>
-	//ProItemBox.vue
 	export default {
-		data() {
-			return {
-				json: JsonPro,
+		props:{
+			products : {
+				type : Object,
+				requied: true
 			}
-		}
+		},
 	}
 </script>
 
@@ -28,8 +27,18 @@
 		box-sizing: border-box;
 		padding: 0 5px;
 	}
-	
-	@media (max-width: 991.98px){
+
+	@media (max-width: 575.98px) {
+		.proItemList {
+			box-sizing: border-box;
+		}
+
+		.wrapper-box {
+			flex: 0 0 100%;
+		}
+	}
+
+	@media (min-width: 576px) and (max-width: 991.98px) {
 		.wrapper-box {
 			flex: 0 0 50%;
 			box-sizing: border-box;
@@ -43,5 +52,4 @@
 			box-sizing: border-box;
 		}
 	}
-
 </style>

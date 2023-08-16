@@ -1,31 +1,37 @@
 <script setup>
-	import Close from '../../assets/icon-svg/category/close.vue'
-	import SliderCate from '../../assets/icon-svg/category/sliders.vue'
-
-	import JsonCat from '../data/cateProduct.json'
+	import Close from '../../assets/icon-svg/viewHistory/close.vue'
+	import SliderCate from '../../assets/icon-svg/viewHistory/sliders.vue'
+	import ProItemBox from '../product/ProItemBox.vue';
+	import JsonPro from '../data/products.json';
 </script>
 <template>
-	<section class="catItemList" :class="{actionShow : isShow }">
+	<section class="viewHistory" :class="{actionShow : isShow }">
 		<div class="btn-show d-none" @click="toggleSlidenav">
 			<SliderCate :setWidth="20" :setHeight="20" v-if="!isShow" />
 			<Close :setWidth="20" :setHeight="20" v-else />
 		</div>
 		<div class="wrapperDropCate d-flex align-items-center justify-content-between my-1 pe-1">
-			<p class="txt-cate uppercase fw-700">danh mục</p>
+			<p class="txt-cate uppercase fw-700">Sản phẩm vừa xem</p>
 		</div>
-		<ul class="catItemBox my-1" ref="catItemBox">
-			<li class="catBox-item active p-1" v-for="(category,index) in data" :key="index">
-				<a href="" class="catBox-link">{{ category.name }}</a>
-			</li>
+		<ul class="viewHistoryBox" ref="viewHistoryBox">
+			<div class="wrapper-box" v-for="(data,index) in allProducts" v-show="index < 8" :key="index">
+				<ProItemBox :items="data" />
+			</div>
 		</ul>
 	</section>
 </template>
 
 <script>
 	export default {
+		props:{
+			products : {
+				type : Object,
+				requied: true
+			}
+		},
 		data() {
 			return {
-				data: JsonCat,
+				allProducts: JsonPro,
 				isDropdownOpen: false,
 				isShow: false,
 			}
@@ -39,37 +45,19 @@
 </script>
 
 <style>
-	.catItemList {
-		position: relative;
+	.viewHistoryBox .box{
+		display: flex;
 	}
-
-	.wrapperDropCate {
-		border-bottom: 1px solid var(--gray-medium);
+	
+	.viewHistoryBox .box .proItemImage {
+		flex: 0 0 50%;
 	}
-
-	.catItemBox {
-		width: 100%;
-		color: var(--gray-dark);
-		overflow: hidden;
-		transition: all 0.2s ease;
-		box-sizing: border-box;
+	.viewHistoryBox .box .wrapperPro {
+		flex: 0 0 50%;
 	}
-
-	.catBox-item:hover>.catBox-link {
-		text-decoration: underline;
-	}
-
-	.catBox-item.active>.catBox-link {
-		color: var(--green-medium);
-	}
-
-	.catBox-item.active:hover>.catBox-link {
-		text-decoration: none;
-	}
-
 	
 	@media (max-width: 575.98px) {
-		.catItemList {
+		.viewHistory {
 			position: fixed;
 			background: var(--white);
 			left: -70%;
@@ -81,12 +69,18 @@
 			transition: left 1s ease;
 		}
 		
+		.viewHistoryBox{
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+		}
+		
 		.btn-show {
 			display: block;
 			position: absolute;
 			background: var(--white);
 			left: 100%;
-			top: 30%;
+			top: 50%;
 			padding: 5px;
 			border: 1px solid var(--gray-medium);
 			z-index: 2;
@@ -96,23 +90,29 @@
 			transition: all 1s ease;
 		}
 		
-		.catItemList.actionShow {
+		.viewHistory.actionShow {
 			left: 0;
 		}
 	}
 	
 	/* Medium devices (tablet và một số màn hình nhỏ hơn) */
 	@media (min-width: 576px) and (max-width: 991.98px) {
-		.catItemList {
+		.viewHistory {
 			position: fixed;
 			background: var(--white);
-			left: -30%;
+			left: -50%;
+			width: 50%;
 			top: 0;
 			height: 100%;
-			width: 30%;
 			z-index: 2;
 			padding: 50px 10px 0;
 			transition: left 1s ease;
+		}
+		
+		.viewHistoryBox {
+			width: 100%;
+			height: 100%;
+			overflow: auto;
 		}
 		
 		.btn-show {
@@ -130,7 +130,7 @@
 			transition: all 1s ease;
 		}
 		
-		.catItemList.actionShow {
+		.viewHistory.actionShow {
 			left: 0;
 		}
 	}

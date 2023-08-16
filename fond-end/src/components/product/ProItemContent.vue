@@ -1,13 +1,16 @@
+<script setup>
+	import ProductList from './ProItemList.vue'
+</script>
 <template>
 	<section class="proItemContent my-2">
 		<ul class="list-tab d-flex align-items-center g20">
-			<li @click="acShow = 1" :class="{active : acShow === 1}" class="tab-item py-1 uppercase fw-700">mô tả
+			<li @click="acShow = 1" :class="{active : acShow === 1}" class="tab-item text-wrap py-1 uppercase fw-700">mô tả
 			</li>
-			<li @click="acShow = 2" :class="{active : acShow === 2}" class="tab-item py-1 uppercase fw-700">đánh giá
+			<li @click="acShow = 2" :class="{active : acShow === 2}" class="tab-item text-wrap py-1 uppercase fw-700">đánh giá
 			</li>
-			<li @click="acShow = 3" :class="{active : acShow === 3}" class="tab-item py-1 uppercase fw-700">vendor
+			<li @click="acShow = 3" :class="{active : acShow === 3}" class="tab-item text-wrap py-1 uppercase fw-700">vendor
 				info</li>
-			<li @click="acShow = 4" :class="{active : acShow === 4}" class="tab-item py-1 uppercase fw-700">more
+			<li @click="acShow = 4" :class="{active : acShow === 4}" class="tab-item text-wrap py-1 uppercase fw-700">more
 				products</li>
 		</ul>
 		<div class="content-tab">
@@ -133,8 +136,14 @@
 				<p class="my-3">Chưa có đánh giá nào.</p>
 				<p>Chỉ những khách hàng đã đăng nhập và mua sản phẩm này mới có thể đưa ra đánh giá.</p>
 			</div>
-			<div v-else-if="acShow === 3">3</div>
-			<div v-else="acShow === 4">4</div>
+			<div v-else-if="acShow === 3">
+				<h3 class="my-3">Vendor: <span>duyen.huynh</span></h3>
+				<h4 class="my-1">Address:</h4>
+				<span>No ratings found yet!</span>
+			</div>
+			<div v-else="acShow === 4">
+				<ProductList />
+			</div>
 		</div>
 	</section>
 </template>
@@ -190,5 +199,18 @@
 	
 	.content-tab{
 		transition: all .3s;
+	}
+	
+	
+	@media (max-width: 575.98px) {
+		.list-tab{
+			margin: 0 30px;
+		}
+		.list-tab .tab-item{
+			font-size: 12px;
+		}
+		.content-tab{
+			margin: 30px;
+		}
 	}
 </style>
