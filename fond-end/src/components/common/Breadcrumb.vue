@@ -44,27 +44,27 @@
 				const x = (this.$route.path.split('/')).filter(item => item !== "");
 				
 				if (currentLink === '/') breadcrumbList.push('home');
-				if (currentLink === '/san-pham') breadcrumbList.push('home', 'Sản phẩm');
-				if (currentLink === '/blog') breadcrumbList.push('home', 'blog');
+				if (currentLink === '/san-pham' || x[1] === 'page') breadcrumbList.push('home', 'Sản phẩm');
+				if (currentLink === '/tin-tuc') breadcrumbList.push('home', 'tin tức');
 				if (currentLink === '/lien-he') breadcrumbList.push('home', 'liên hệ');
 
 				if (x.length >= 2) {
-					if (x[0] === "san-pham") {
+					if (x[0] === "san-pham" && x[1] !== "page") {
 						const y = this.jsonPro.find(data => this.removeDiacritics(data.name).split(' ').join("-") === x[
 						1]);
 						breadcrumbList.push('home', 'sản phẩm', y.category, y.name);
 					}
-					if (x[0] === "blog") {
+					if (x[0] === "tin-tuc") {
 						const y = this.jsonNew.find(data => this.removeDiacritics(data.title).split(' ').join("-") === x[
 							1]);
-						breadcrumbList.push('home', 'blog', y.category, y.title);
+						breadcrumbList.push('home', 'tin tức', y.category, y.title);
 					}
 				}
 				return breadcrumbList;
 			},
 			getLink(item) {
-				if (item === 'sản phẩm') return '/shop';
-				if (item === 'blog') return '/blog';
+				if (item === 'sản phẩm') return '/san-pham';
+				if (item === 'tin-tuc') return '/tin-tuc';
 				if (item === 'liên hệ') return '/lien-he';
 			},
 		},

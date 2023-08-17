@@ -11,7 +11,7 @@
 </script>
 <template>
 	<div class="blogNewBox d-flex g20">
-		<a :href="`/blog/${getTxtLink(items.title)}`" class="new-img">
+		<a :href="`/tin-tuc/${getTxtLink(items.title)}`" class="new-img">
 			<div class="blogNewImage text-center">
 				<BlogNewImage :newImage="items.thumbnail" />
 			</div>

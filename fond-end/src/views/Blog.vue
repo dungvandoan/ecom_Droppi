@@ -4,7 +4,7 @@
 </script>
 <template>
 	<main>
-		<div class="container">
+		<div class="container py-3">
 			<section class="blog d-flex justify-content-between">
 				<div class="wrapper content-page">
 					<BlogList />
@@ -18,10 +18,6 @@
 </template>
 
 <style>
-	main {
-		padding: 30px 0;
-	}
-
 	.blog {
 		gap: 50px;
 	}

@@ -14,7 +14,7 @@
 			<p class="txt-cate uppercase fw-700">Sản phẩm vừa xem</p>
 		</div>
 		<ul class="viewHistoryBox" ref="viewHistoryBox">
-			<div class="wrapper-box" v-for="(data,index) in allProducts" v-show="index < 8" :key="index">
+			<div class="wrapper-box" v-for="(data,index) in itemShow" v-show="index < 8" :key="index">
 				<ProItemBox :items="data" />
 			</div>
 		</ul>
@@ -32,9 +32,18 @@
 		data() {
 			return {
 				allProducts: JsonPro,
+				itemShow: [],
 				isDropdownOpen: false,
 				isShow: false,
 			}
+		},
+		computed: {
+			getItem() {
+				this.itemShow = this.allProducts.slice(0, 5);
+			}
+		},
+		mounted() {
+			this.getItem;
 		},
 		methods: {
 			toggleSlidenav() {

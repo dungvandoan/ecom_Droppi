@@ -9,8 +9,8 @@
 
 <template>
 	<main>
-		<div class="container">
-			<section class="home-page d-flex justify-content-between">
+		<div class="container py-3">
+			<section class="shop d-flex justify-content-between">
 				<aside class="aside">
 					<Category />
 				</aside>
@@ -53,11 +53,7 @@
 </script>
 
 <style>
-	main {
-		padding: 30px 0;
-	}
-
-	.home-page {
+	.shop {
 		gap: 50px;
 	}
 
@@ -66,14 +62,14 @@
 	}
 
 	.content-page {
-		flex: 0 0 calc(75% - 25px);
+		flex: 0 0 calc(80% - 25px);
 		flex-direction: column;
 		overflow: hidden;
 	}
 
 	/* Medium devices (tablet và một số màn hình nhỏ hơn) */
 	@media (max-width: 991.98px) {
-		.home-page {
+		.shop {
 			gap: 0px;
 		}
 
@@ -88,27 +84,27 @@
 
 	/* Large devices (laptop và màn hình lớn hơn) */
 	@media (min-width: 992px) and (max-width: 1199.98px) {
-		.home-page {
+		.shop {
 			gap: 10px;
 		}
 
 		.aside {
-			flex: 0 0 calc(25% - 5px);
+			flex: 0 0 calc(20% - 5px);
 		}
 
 		.content-page {
-			flex: 0 0 calc(75% - 5px);
+			flex: 0 0 calc(80% - 5px);
 		}
 	}
 
 	/* Extra large devices (màn hình rất lớn) */
 	@media (min-width: 1200px) and (max-width: 1399.98px) {
 		.aside {
-			flex: 0 0 calc(25% - 25px);
+			flex: 0 0 calc(20% - 25px);
 		}
 
 		.content-page {
-			flex: 0 0 calc(75% - 25px);
+			flex: 0 0 calc(80% - 25px);
 		}
 	}
 </style>

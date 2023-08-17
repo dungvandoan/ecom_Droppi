@@ -1,48 +1,66 @@
 [{
-		"name": "Khẩu trang",
-		"link": ""
-
-	}, {
-		"name": "Vệ sinh nhà cửa",
-		"link": ""
+		"name": "Bách hóa tổng hợp",
+		"link": "",
+		"subCategories": [{
+				"name": "Khẩu trang",
+				"link": ""
+			},
+			{
+				"name": "Vệ sinh nhà cửa",
+				"link": ""
+			}
+		]
 	},
 	{
 		"name": "Bảo hiểm",
-		"link": ""
+		"link": "",
+		"subCategories": []
 	},
 	{
 		"name": "Chăm Sóc Cá Nhân",
-		"link": ""
+		"link": "",
+		"subCategories": []
 	},
 	{
 		"name": "Đặc sản địa phương",
-		"link": ""
+		"link": "",
+		"subCategories": []
 	},
 	{
 		"name": "Dịch vụ",
-		"link": ""
+		"link": "",
+		"subCategories": []
 	},
 	{
 		"name": "DROPPII LIVING",
-		"link": ""
+		"link": "",
+		"subCategories": []
 	},
 	{
-		"name": "Chăm sóc cơ thể cho bé",
-		"link": ""
-	}, {
-		"name": "Đồ dùng ăn dặm",
-		"link": ""
-	}, {
-		"name": "Đồ dùng cho trẻ sơ sinh",
-		"link": ""
-	}, {
-		"name": "Học tập",
-		"link": ""
-	}, {
-		"name": "Sữa Mẹ & Bé",
-		"link": ""
-	}, {
-		"name": "Thực phẩm cho bé",
-		"link": ""
+		"name": "Mẹ và Bé",
+		"link": "",
+		"subCategories": [{
+				"name": "Chăm sóc cơ thể cho bé",
+				"link": ""
+			},
+			{
+				"name": "Đồ dùng ăn dặm",
+				"link": ""
+			},
+			{
+				"name": "Đồ dùng cho trẻ sơ sinh",
+				"link": ""
+			},
+			{
+				"name": "Học tập",
+				"link": ""
+			}, {
+				"name": "Sữa Mẹ & Bé",
+				"link": ""
+			}, {
+				"name": "Thực phẩm cho bé",
+				"link": ""
+			}
+		]
 	}
 ]

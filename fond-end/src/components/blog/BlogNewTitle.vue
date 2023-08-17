@@ -16,11 +16,5 @@
 	h3 {
 		font-size: 24px;
 		line-height: 31px;
-		text-overflow: ellipsis;
-		max-height: 62px;
-		overflow: hidden;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
 	}
 </style>

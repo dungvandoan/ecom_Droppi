@@ -6,7 +6,7 @@
 </script>
 <template>
 	<main>
-		<div class="container">
+		<div class="container py-3">
 			<section class="detail-page d-flex justify-content-between">
 				<div class="content-page d-flex">
 					<ProItemDetail />
@@ -25,10 +25,6 @@
 </script>
 
 <style>
-	main {
-		padding: 30px 0;
-	}
-
 	.detail-page {
 		gap: 40px
 	}

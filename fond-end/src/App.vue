@@ -10,9 +10,19 @@
 
 <template>
 	<header>
-		<Navbar/>
-		<Breadcrumb />
+		<Navbar />
+		<Breadcrumb v-show="currentPath.length !== 0" />
 	</header>
 	<RouterView />
 	<Footer />
 </template>
+
+<script>
+	export default {
+		computed: {
+			currentPath() {
+				return (this.$route.path.split('/')).filter(item => item !== "");
+			},
+		},
+	}
+</script>

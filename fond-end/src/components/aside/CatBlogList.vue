@@ -68,7 +68,7 @@
 	}
 
 	
-	@media (max-width: 575.98px) {
+	@media (max-width: 575.99px) {
 		.catItemList {
 			position: fixed;
 			background: var(--white);

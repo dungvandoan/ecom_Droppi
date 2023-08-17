@@ -14,10 +14,10 @@
 			<div class="img-detail">
 				<BlogNewImage :newImage="foundBlog.banner" />
 			</div>
-			<div class="title-detail ms-5 py-3">
+			<div class="title-detail ms-5 my-3">
 				<BlogNewTitle :newTitle="foundBlog.title" />
 			</div>
-			<div class="content-detail">
+			<div class="content-detail ms-2">
 				<BlogNewContent />
 			</div>
 		</div>
@@ -49,15 +49,20 @@
 	.img-detail img{
 		min-width: 100%;
 		max-height: 400px;
-		object-fit: cover;
 	}
-	.title-detail h3{
+	.title-detail .blogNewTitle>h3{
 		font-weight: 700;
 		font-size: 30px;
-		line-height: 40px;
 		color: var(--green-medium);
 	}
-	.content-detail{
-		margin-left: 75px;
+	
+	
+	@media (max-width: 575.98px) {
+		.img-detail{
+			margin: 0 5px;
+		}
+		.title-detail>.blogNewTitle>h3{
+			margin: 0 10px;
+		}
 	}
 </style>

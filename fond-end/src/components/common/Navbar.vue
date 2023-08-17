@@ -27,9 +27,9 @@
 					sản phẩm
 				</RouterLink>
 			</li>
-			<li class="nav-item" :class="{ active: currentPath[0] === 'blog'}">
-				<RouterLink to="/blog" class="nav-link uppercase fw-600">
-					blog
+			<li class="nav-item" :class="{ active: currentPath[0] === 'tin-tuc'}">
+				<RouterLink to="/tin-tuc" class="nav-link uppercase fw-600">
+					tin tức
 				</RouterLink>
 			</li>
 			<li class="nav-item" :class="{ active: currentPath[0] === 'lien-he'}">
@@ -54,17 +54,26 @@
 				<IconClose :setWidth="20" :setHeight="20" @click="openSidenav" :setColor="`var(--white)`" />
 			</div>
 			<ul class="sidenav-body">
-				<li class="sidenav-item text-center my-1"><a href="/" class="sidenav-link  uppercase fw900">home</a>
+				<li class="sidenav-item text-center my-1">
+					<RouterLink to="/" class="sidenav-link uppercase fw900">home</RouterLink>
 				</li>
-				<li class="sidenav-item text-center my-1"><a href="/blog" class="sidenav-link  uppercase fw900">blog</a>
+				<li class="sidenav-item text-center my-1">
+					<RouterLink to="/san-pham" class="sidenav-link uppercase fw900">sản phẩm</RouterLink>
 				</li>
-				<li class="sidenav-item text-center my-1"><a href="/lien-he" class="sidenav-link  uppercase fw900">liên
-						hệ</a>
+				<li class="sidenav-item text-center my-1">
+					<RouterLink to="/tin-tuc" class="sidenav-link uppercase fw900">tin tức</RouterLink>
 				</li>
-				<li class="sidenav-item text-center my-1"><a href="/" class="sidenav-link  uppercase fw900">giỏ hàng</a>
+				<li class="sidenav-item text-center my-1">
+					<RouterLink to="/lien-he" class="sidenav-link uppercase fw900">liên
+						hệ</RouterLink>
 				</li>
-				<li class="sidenav-item text-center my-1"><a href="/" class="sidenav-link  uppercase fw900">đăng
-						nhập</a></li>
+				<li class="sidenav-item text-center my-1">
+					<RouterLink to="/" class="sidenav-link uppercase fw900">giỏ hàng</RouterLink>
+				</li>
+				<li class="sidenav-item text-center my-1">
+					<RouterLink to="/" class="sidenav-link uppercase fw900">đăng
+						nhập</RouterLink>
+				</li>
 			</ul>
 		</div>
 		<div class="top-bar-buttons d-flex justify-content-end me-2">
@@ -89,8 +98,14 @@
 		},
 		computed: {
 			currentPath() {
-				console.log((this.$route.path.split('/')).filter(item => item !== ""));
 				return (this.$route.path.split('/')).filter(item => item !== "");
+			},
+		},
+		watch: {
+			'$route'() {
+				setTimeout(() => {
+					this.showSidenav = false;
+				}, 250)
 			},
 		},
 		methods: {

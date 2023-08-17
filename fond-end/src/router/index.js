@@ -22,12 +22,12 @@ const router = createRouter({
 			component: () => import('../views/Shop.vue')
 		},
 		{
-			path: '/blog',
-			name: 'blog',
+			path: '/tin-tuc',
+			name: 'tin-tuc',
 			component: () => import('../views/Blog.vue')
 		},
 		{
-			path: '/blog/:nameBlog',
+			path: '/tin-tuc/:nameBlog',
 			name: 'blog-detail',
 			component: () => import('../views/BlogDetail.vue')
 		},

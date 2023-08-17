@@ -3,7 +3,7 @@
 	import ProItemRelated from './ProItemRelated.vue'
 </script>
 <template>
-	<section class="proItemList d-flex flex-wrap px-5">
+	<section class="proItemList d-flex flex-wrap">
 		<div class="wrapper-box" v-for="data in products" :key="data">
 			<ProItemBox :items="data" />
 		</div>
@@ -34,13 +34,13 @@
 		}
 
 		.wrapper-box {
-			flex: 0 0 100%;
+			flex: 0 0 50%;
 		}
 	}
 
 	@media (min-width: 576px) and (max-width: 991.98px) {
 		.wrapper-box {
-			flex: 0 0 50%;
+			flex: 0 0 calc(100% / 3);
 			box-sizing: border-box;
 		}
 	}
@@ -48,7 +48,7 @@
 	/* Medium devices (tablet và một số màn hình nhỏ hơn) */
 	@media (min-width: 768px) and (max-width: 1199.98px) {
 		.wrapper-box {
-			flex: 0 0 calc(100% / 3);
+			flex: 0 0 25%;
 			box-sizing: border-box;
 		}
 	}

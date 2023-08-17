@@ -5,7 +5,7 @@
 
 <template>
 	<main>
-		<div class="container">
+		<div class="container py-3">
 			<section class="home-page d-flex justify-content-between">
 				<div class="content-page">
 					<BlogNewDetail />
@@ -23,10 +23,6 @@
 </script>
 
 <style>
-	main {
-		padding: 30px 0;
-	}
-
 	.blog {
 		gap: 50px;
 	}

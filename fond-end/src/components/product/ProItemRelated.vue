@@ -37,16 +37,8 @@
 				isAutoPlayPaused: false,
 			}
 		},
-		computed: {
-			getItem() {
-				const startIndex = (this.currentItem - 1) * this.itemsPerPage;
-				const endIndex = startIndex + this.itemsPerPage;
-				this.showProducts = this.allProducts.slice(startIndex, endIndex);
-			}
-		},
 		mounted() {
 			this.setStep();
-			// this.startAutoPlay();
 		},
 		methods: {
 			setStep() {
@@ -90,20 +82,6 @@
 					this.styleItem = `transition:none;transform: translateX(${this.step}px);`
 				}
 			},
-			startAutoPlay() {
-				if (this.isAutoPlayPaused === false) {
-					setInterval(() => {
-						this.next();
-					}, 2500);
-				}
-			},
-			// pauseAutoPlay() {
-			// 	this.isAutoPlayPaused = true;
-			// 	setTimeout(() => {
-			// 		this.isAutoPlayPaused = false;
-			// 		this.startAutoPlay();
-			// 	}, 10000);
-			// },
 		}
 	}
 </script>
@@ -133,7 +111,6 @@
 		overflow: hidden;
 		cursor: pointer;
 		user-select: none;
-		scroll-behavior: auto;
 	}
 
 	.carousel-item {

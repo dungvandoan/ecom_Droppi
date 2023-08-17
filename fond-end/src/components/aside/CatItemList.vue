@@ -15,7 +15,14 @@
 		</div>
 		<ul class="catItemBox my-1" ref="catItemBox">
 			<li class="catBox-item active p-1" v-for="(category,index) in data" :key="index">
-				<a href="" class="catBox-link">{{ category.name }}</a>
+				<div class="wrapperDropSub d-flex align-items-center justify-content-between">
+					<a href="#" class="catBox-link fw-700">{{ category.name }}</a>
+				</div>
+				<ul v-if="category.subCategories.length > 0" class="subcategoryList" :ref="`subCategoryList_${index}`">
+					<li class="subCate-item p-1" v-for="dataSub in category.subCategories" :key="dataSub.id">
+						<a href="" class="subCate-link">{{dataSub.name}}</a>
+					</li>
+				</ul>
 			</li>
 		</ul>
 	</section>
@@ -67,8 +74,8 @@
 		text-decoration: none;
 	}
 
-	
-	@media (max-width: 575.98px) {
+
+	@media (max-width: 575.99px) {
 		.catItemList {
 			position: fixed;
 			background: var(--white);
@@ -78,9 +85,8 @@
 			height: 100%;
 			z-index: 2;
 			padding: 50px 10px 0;
-			transition: left 1s ease;
 		}
-		
+
 		.btn-show {
 			display: block;
 			position: absolute;
@@ -91,30 +97,30 @@
 			border: 1px solid var(--gray-medium);
 			z-index: 2;
 		}
-		
+
 		.btn-show svg {
 			transition: all 1s ease;
 		}
-		
+
 		.catItemList.actionShow {
+			transition: left 1s ease;
 			left: 0;
 		}
 	}
-	
+
 	/* Medium devices (tablet và một số màn hình nhỏ hơn) */
 	@media (min-width: 576px) and (max-width: 991.98px) {
 		.catItemList {
 			position: fixed;
 			background: var(--white);
-			left: -30%;
+			left: -50%;
+			width: 50%;
 			top: 0;
 			height: 100%;
-			width: 30%;
 			z-index: 2;
 			padding: 50px 10px 0;
-			transition: left 1s ease;
 		}
-		
+
 		.btn-show {
 			display: block;
 			position: absolute;
@@ -125,13 +131,14 @@
 			border: 1px solid var(--gray-medium);
 			z-index: 2;
 		}
-		
+
 		.btn-show svg {
 			transition: all 1s ease;
 		}
-		
+
 		.catItemList.actionShow {
 			left: 0;
+			transition: left 1s ease;
 		}
 	}
 </style>
