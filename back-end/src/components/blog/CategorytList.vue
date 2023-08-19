@@ -51,7 +51,7 @@
 </script>
 
 <style>
-	.productLisst {
+	.categoryList {
 		padding: 0 10px;
 		background: white;
 		overflow-y: scroll;

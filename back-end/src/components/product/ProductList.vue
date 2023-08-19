@@ -11,51 +11,50 @@
 	<section class="productLisst">
 		<table>
 			<tr class="header-table px-1">
-				<th class="header-row fw-700" v-for="data in header" :key="data"
+				<th class="header-row fw-700" v-for="(data,index) in header" :key="index"
 					:rowspan="data !== 'Trạng Thái' ? 2 : 'none'" :colspan="data === 'Trạng Thái' ? 3 : 'none'">
 					{{ data }}
 				</th>
 			</tr>
 			<tr>
-				<th rowspan="1" >Đang bán</th>
-				<th rowspan="1" >ẩn</th>
-				<th rowspan="1" >xoá</th>
+				<th class="p-1" rowspan="1">Đang</th>
+				<th class="p-1" rowspan="1">ẩn</th>
+				<th class="p-1" rowspan="1">xoá</th>
 			</tr>
-			<tr class="list-data px-1" v-for="item in items" :key="item">
+			<tr class="list-data px-1" v-for="(item,i) in items" :key="i">
 				<td class="data-row text-center">
 					<input type="checkbox">
 				</td>
 				<td class="data-row text-center">
 					{{ item.id }}
 				</td>
-				<td class="data-row text-center data-img">
+				<td class="data-row data-img text-center">
 					<img :src="`/src/assets/images${item.thumbnail[0]}`" alt="" class="img-fluid">
 				</td>
 				<td class="data-row text-center">
 					{{ item.name }}
 				</td>
-				<td class="data-row text-center fw-700">
+				<td class="data-row fw-700">
 					<Price :pprice="item.price" />
 				</td>
-				<td class="data-row text-center">
+				<td class="data-row">
 					<Promotion :ppromotion="item.promotion" />
 				</td>
-				<td class="data-row text-center">
+				<td class="data-row">
 					<Category :pcategory="item.category" />
 				</td>
-				<td class="data-row text-center">
+				<td class="data-row">
 					<Tags :ptags="item.tags" />
 				</td>
 				<td class="data-row text-center">
-					<input type="checkbox">
+					<input type="radio" checked :name="'status_' + i">
 				</td>
 				<td class="data-row text-center">
-					<input type="checkbox">
+					<input type="radio" :name="'status_' + i">
 				</td>
 				<td class="data-row text-center">
-					<input type="checkbox">
+					<input type="radio" :name="'status_' + i">
 				</td>
-
 				<td class="data-row text-center">
 					doan dung
 				</td>
@@ -105,7 +104,8 @@
 	}
 
 	.data-row {
-		min-width: 100px;
+		min-width: 50px;
+		padding: 0 5px;
 	}
 
 	.data-img {

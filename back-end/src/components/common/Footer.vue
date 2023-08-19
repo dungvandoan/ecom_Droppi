@@ -29,6 +29,6 @@
 		border-radius: 0 0px 20px 20px ;
 	}
 	.regulationsSection{
-		height: 75px;
+		height: 50px;
 	}
 </style>
