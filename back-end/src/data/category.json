@@ -1,0 +1,65 @@
+[{
+		"id": "C001",
+		"name": "Khẩu trang",
+		"img": [],
+		"catGroup": [{
+				"id": "G001",
+				"name": "Bách hóa tổng hợp",
+				"link": ""
+			},
+			{
+				"id": "G002",
+				"name": "Y tế",
+				"link": ""
+			}
+		]
+	},
+	{
+		"id": "C001",
+		"name": "Khẩu trang",
+		"img": [],
+		"catGroup": [{
+				"id": "G001",
+				"name": "Bách hóa tổng hợp",
+				"link": ""
+			},
+			{
+				"id": "G002",
+				"name": "Y tế",
+				"link": ""
+			}
+		]
+	},
+	{
+		"id": "C001",
+		"name": "Khẩu trang",
+		"img": [],
+		"catGroup": [{
+				"id": "G001",
+				"name": "Bách hóa tổng hợp",
+				"link": ""
+			},
+			{
+				"id": "G002",
+				"name": "Y tế",
+				"link": ""
+			}
+		]
+	},
+	{
+		"id": "C001",
+		"name": "Khẩu trang",
+		"img": [],
+		"catGroup": [{
+				"id": "G001",
+				"name": "Bách hóa tổng hợp",
+				"link": ""
+			},
+			{
+				"id": "G002",
+				"name": "Y tế",
+				"link": ""
+			}
+		]
+	}
+]

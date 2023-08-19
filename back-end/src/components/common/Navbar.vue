@@ -9,8 +9,8 @@
 </script>
 <template>
 	<section class="navbar d-flex align-items-center">
-		<div class="col nav-brand d-flex align-items-center px-2 g20">
-			<div class="btn-icon btn-icon-sidenav">
+		<div class="col nav-brand d-flex align-items-center px-2 g5">
+			<div class="btn-icon btn-icon-sidenav" @click="sidenavWidthChanged">
 				<IconMenu :setWidth="18" :setHeight="18" />
 			</div>
 			<div class="images-logo">
@@ -30,7 +30,7 @@
 					<IconFilter :setWidth="18" :setHeight="18" />
 				</div>
 			</div>
-		<!-- 	<div class="form-filter"></div> -->
+			<!-- 	<div class="form-filter"></div> -->
 		</div>
 		<div class="col button-support-user d-flex align-items-center justify-content-between	">
 			<div class="btn-icon btn-icon-sp">
@@ -54,6 +54,11 @@
 		data() {
 			return {
 				focusSearch: false,
+			}
+		},
+		methods: {
+			sidenavWidthChanged(){
+				this.$emit('sidenav-resized')
 			}
 		}
 	}
@@ -140,13 +145,9 @@
 		margin-left: auto;
 	}
 
-	/* form-filter */
-	/* .form-filter {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		background: red;
-		top: 90%;
-		left: 0;
-	} */
+	@media (max-width:767px) {
+		.button-support-user{
+			display: none;
+		}
+	}
 </style>

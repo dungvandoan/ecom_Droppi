@@ -29,6 +29,7 @@
 
 <style>
 	.tableRow {
+		width: 100%;
 		background: var(--white);
 		min-height: 50px;
 	}

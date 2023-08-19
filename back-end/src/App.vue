@@ -9,27 +9,48 @@
 
 <template>
 	<header>
-		<Navbar />
+		<Navbar @sidenav-resized="handleNavbarClick" />
 	</header>
 	<main>
-		<aside>
-			<Sidenav />
+		<aside :style="{'width': clickNav ? '13%' : '4%','margin-right': clickNav ? '10px' : '0' }">
+			<Sidenav :change="clickNav" />
 		</aside>
-		<RouterView />
+		<section :style="{'width': clickNav ? '85%' : '95%'}">
+			<RouterView />
+		</section>
 	</main>
 </template>
+
+<script>
+	export default {
+		data() {
+			return {
+				clickNav: true,
+			}
+		},
+		methods: {
+			handleNavbarClick() {
+				this.clickNav = !this.clickNav;
+			}
+		}
+	}
+</script>
 
 <style scoped>
 	main {
 		display: flex;
 		background: var(--whisper-white);
+	    flex-basis: 100%;
+		height: 100vh;
 	}
 
 	main>aside {
-		flex: 0 0 13%;
+		display: flex;
+		transition: all .3s ease;
 	}
 
 	main>section {
-		flex: 0 1 87%;
+		display: flex;	
+		transition: all .3s ease;
 	}
 </style>
