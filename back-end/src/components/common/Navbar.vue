@@ -66,8 +66,8 @@
 
 <style>
 	.navbar {
+		height: 100%;
 		background: var(--whisper-white);
-		height: 75px;
 	}
 
 	.navbar .btn-icon {

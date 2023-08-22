@@ -12,10 +12,10 @@
 		<Navbar @sidenav-resized="handleNavbarClick" />
 	</header>
 	<main>
-		<aside :style="{'width': clickNav ? '13%' : '4%','margin-right': clickNav ? '10px' : '0' }">
+		<aside :style="{'flex-basis': clickNav ? 'calc(13% - 5px)' : 'calc(4% - 5px)'}">
 			<Sidenav :change="clickNav" />
 		</aside>
-		<section :style="{'width': clickNav ? '85%' : '95%'}">
+		<section :style="{'flex-basis': clickNav ? 'calc(87% - 5px)' : 'calc(96% - 5px)'}">
 			<RouterView />
 		</section>
 	</main>
@@ -37,12 +37,19 @@
 </script>
 
 <style scoped>
+	header{
+		height: 75px;
+	}
+	
 	main {
+		height: calc(100vh - 75px);
 		display: flex;
 		background: var(--whisper-white);
-	    flex-basis: 100%;
-		height: 100vh;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 10px;
 	}
+	
 
 	main>aside {
 		display: flex;

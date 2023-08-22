@@ -10,7 +10,7 @@
 <template>
 	<section class="productLisst">
 		<table>
-			<tr class="header-table px-1">
+			<tr class="header-table">
 				<th class="header-row fw-700" v-for="(data,index) in header" :key="index"
 					:rowspan="data !== 'Trạng Thái' ? 2 : 'none'" :colspan="data === 'Trạng Thái' ? 3 : 'none'">
 					{{ data }}
@@ -82,7 +82,6 @@
 
 <style>
 	.productLisst {
-		padding: 0 10px;
 		background: white;
 		overflow-y: scroll;
 		height: 750px;

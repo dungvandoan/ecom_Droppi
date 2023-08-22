@@ -6,7 +6,7 @@
 	import chevronRight from '../../assets/icons/ListAction/chevronRight.vue'
 </script>
 <template>
-	<section class="listItemAction d-flex justify-content-between px-1">
+	<section class="lineItemAction d-flex justify-content-between px-1">
 		<div class="button-top-action d-flex align-items-center g10 ps-2">
 			<div class="form-check-items d-flex align-items-center">
 				<div class="checkBoxAll text-center">
@@ -39,9 +39,9 @@
 </script>
 
 <style>
-	.listItemAction {
+	.lineItemAction {
+		height: 100%;
 		background: var(--white);
-		min-height: 50px;
 		border-radius: 20px 20px 0 0;
 	}
 

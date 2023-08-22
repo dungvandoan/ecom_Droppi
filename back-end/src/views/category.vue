@@ -5,31 +5,47 @@
 	import jsonCategory from '../data/category.json'
 </script>
 <template>
-	<section class="category d-flex">
+	<section class="product d-flex">
 		<!-- s	ort -->
-		<LineItemAction />
+		<div class="top">
+			<LineItemAction />
+		</div>
 		<!-- table -->
-		<CategoryList :items="allCategory" :header="headerCategory"/>
+		<div class="mid">
+			<CategoryList :items="allProduct" :header="headerProduct" />
+		</div>
 		<!-- footer -->
-		<Footer />
+		<div class="bottom">
+			<Footer />
+		</div>
 	</section>
 </template>
 
 <script>
 	export default {
 		data() {
-			return{
-				allCategory : jsonCategory,
-				headerCategory: ['Trạng Thái','Mã','Hỉnh Ảnh','Tên','Nhóm','Tags','Thao Tác']
+			return {
+				allProduct: jsonCategory,
+				headerProduct: ['', 'Mã', 'Hỉnh Ảnh', 'Tên', 'Giá', 'Khuyến Mãi', 'Danh Mục', 'Tags', 'Trạng Thái',
+					'Thao Tác'
+				]
 			}
 		}
 	}
 </script>
 
 <style>
-	.category{
+	.product {
 		flex-direction: column;
-		flex: 0 0 100%;
-		min-height: 100%;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.top{
+		height: 50px;
+	}
+
+	.bottom {
+		height: 50px;
 	}
 </style>
